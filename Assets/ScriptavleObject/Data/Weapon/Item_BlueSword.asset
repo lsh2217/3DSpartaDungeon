@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d411b289dbb8de4b92ea0c169d770ed, type: 3}
+  m_Name: Item_BlueSword
+  m_EditorClassIdentifier: 
+  displayName: "\uC5BC\uC74C\uAC80"
+  description: "\uC5BC\uC74C \uC18D\uC131\uC758 \uB9C8\uBC95\uAC80"
+  type: 0
+  icon: {fileID: 21300000, guid: c095f687aa29b7740b0c42fd7dc79bfb, type: 3}
+  dropPrefab: {fileID: 1309414931747486424, guid: 46b15a90cb953494f8c0fc82afe743f4, type: 3}
+  canStack: 0
+  MaxStackAmount: 0
+  consumables: []

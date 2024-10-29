@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d411b289dbb8de4b92ea0c169d770ed, type: 3}
+  m_Name: Item_Stamina
+  m_EditorClassIdentifier: 
+  displayName: "\uC2A4\uD14C\uBBF8\uB098 \uD3EC\uC158"
+  description: "\uC2A4\uD14C\uBBF8\uB098\uAC00 \uC11C\uC11C\uD788 \uD68C\uBCF5\uD558\uB294
+    \uD3EC\uC158"
+  type: 1
+  icon: {fileID: 21300000, guid: f75612b1c3e2c5c489f547edaaf60205, type: 3}
+  dropPrefab: {fileID: 4877982573113915148, guid: ce675a65df654c8458b1f703640533e7, type: 3}
+  canStack: 1
+  MaxStackAmount: 10
+  consumables: []
