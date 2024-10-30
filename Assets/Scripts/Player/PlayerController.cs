@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -10,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 curMovementInput;
     public LayerMask groundLayerMask;
     private Animator animator;
+
+    public CameraFollow cameraFollew;
+    public Action inventory;
 
     private bool jumpCk;
     private Rigidbody rb;
@@ -26,10 +30,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         jumpCk = IsGrounded();
-        if (!jumpCk)
-        {
-            Debug.Log("ÂøÁö");
-        }
     }
     private void FixedUpdate()
     {
@@ -63,10 +63,13 @@ public class PlayerController : MonoBehaviour
         if(context.phase == InputActionPhase.Performed)
         {
             curMovementInput = context.ReadValue<Vector2>();
-            if (curMovementInput.magnitude > 0)
+            if (curMovementInput.magnitude > 0 && jumpCk)
             {
                 animator.SetBool("isWalking", true);
-                animator.SetBool("isJump", false);
+            }
+            else
+            {
+                animator.SetBool("isWalking", false);
             }
         }
         else if(context.phase == InputActionPhase.Canceled)
@@ -106,4 +109,14 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isJump",false);
         return false;
     }
+    public void OnInventory(InputAction.CallbackContext Context)
+    {
+        if (Context.phase == InputActionPhase.Started)
+        {
+            inventory?.Invoke();
+            cameraFollew.ToggleCursor();
+        }
+    }
+
+
 }

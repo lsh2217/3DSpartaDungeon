@@ -12,13 +12,18 @@ public class CameraFollow : MonoBehaviour
     public float lookSensitivity;
     public float distance;
     public float height;
+    public bool canLook = true;
 
     private Vector2 mouseDelta;
 
     private void LateUpdate()
     {
         FollowTarget();
-        CameraLook();
+
+        if(canLook)
+        {
+            CameraLook();
+        }
     }
     private void FollowTarget()
     {
@@ -41,5 +46,12 @@ public class CameraFollow : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         mouseDelta = context.ReadValue<Vector2>();
+    }
+
+    public void ToggleCursor()
+    {
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
+        canLook = !toggle;
     }
 }
